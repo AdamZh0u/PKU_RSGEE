@@ -61,7 +61,7 @@ class: inverse, center, title-slide, middle
   src="https://earthengine.google.com/iframes/timelapse_player_embed.html#v=22.51954,113.93194,11.375,latLng&t=1.12&ps=25&bt=19840101&et=20201231&startDwell=0&endDwell=0"
   frameborder="0" allowfullscreen></iframe>
 
----
+<!-- ---
 
 <figure>
   <img src="image/wuhan.gif" width="650pt" style="display: block; margin: auto;">
@@ -69,7 +69,7 @@ class: inverse, center, title-slide, middle
     Wuhan, China.</figcaption>
 </figure>
 ???
-https://developers.google.com/earth-engine/timelapse/videos
+https://developers.google.com/earth-engine/timelapse/videos -->
 
 ---
 class: inverse, middle
@@ -147,7 +147,7 @@ class: inverse, middle
 
 --
 
-* 水中含泥沙；水中含叶绿素；含水量高的土壤；虫害
+* 水中含泥沙；水中含叶绿素；虫害
 
 --
 
@@ -160,15 +160,29 @@ class: inverse, middle
 水中含泥沙时，可见光波段反射率增加，峰值出现在黄红区。
 水中含叶绿素时，近红外波段反射率明显增加。
 土质越细、有机质含量越低、含水量越低，反射率越高。
+
+---
+## 遥感在城市分析中的应用
+
+* Google Earth Engine - 行星尺度的地理空间分析工具
+  * Timelapse, Explorer, Code Editor, Data Catalog
+
+<figure>
+  <img src="image/gee.png" width="450pt" style="display: block; margin: auto;">
+</figure>
+* GEE 登录政策
+* 开发方式
+  * Javascript
+  * Python
+
 ---
 ## Datasats
 
-* 气象卫星 - 地球同步轨道，极地轨道
+* 气象卫星
   * NOAA，FY
 
 * 陆地卫星
-  * Landsat
-  * SPOT，Sentinel
+  * Landsat，SPOT，Sentinel，GF
   * 商业高分辨率卫星 - IKONOS, Quickbrid
 
 * 夜间灯光
@@ -181,8 +195,10 @@ class: inverse, middle
 
 * 传感器参数
   * [Landsat](https://developers.google.com/earth-engine/datasets/catalog/landsat)
+
 * Collection 2; Real Time; Tier 1; Tier 2
 
+* 时间分辨率
 * 空间分辨率 - Spatial Resolution
 
 * 光谱分辨率 - Spectral Resolution
@@ -192,22 +208,32 @@ class: inverse, middle
   * 能分辨的最小辐射度差 - pixel min/max
   * 离散化 - scale and offset
 
-* 时间分辨率
-
 ???
 https://www.usgs.gov/media/videos/landsat-collections-what-are-tiers
 
 ---
-## 遥感在城市分析中的应用
+## 全球夜间灯光时间序列可视化 - Javascript
 
-* Google Earth Engine - 行星尺度的地理空间分析工具
+* 全球夜间灯光时间序列回归 
+  * [code](https://code.earthengine.google.com/625b6a12791bcbf8982ef975d18b00a1)
+  * [project](https://github.com/AdamZhou3/NighttimeLightTrend)
+  * [vis](https://adamzhou3.github.io/NighttimeLightTrend/)
 
+* 波段合成（Layer stacking）：对各个不同的波段分别赋予RGB颜色将得到彩色影象
 <figure>
-  <img src="image/gee.png" width="500pt" style="display: block; margin: auto;">
+  <img src="image/stacking.png" width="400pt" style="display: block; margin: auto;">
 </figure>
 
-* [全球夜间灯光时间序列回归](https://code.earthengine.google.com/625b6a12791bcbf8982ef975d18b00a1)
-* 城市土地密度计算
+---
+## 城市土地密度变化分析 - Python
+
+* 圈层分析
+  * 城市中经济活动与到城市中心的空间距离成反比
+<figure>
+  <img src="image/Ring.png" width="600pt" style="display: block; margin: auto;">
+</figure>
+* 城市土地密度时序动态对比
+  * [中欧](E:\190_GEE\2101_Anaysis\00_RES\RES1350\fig)
 
 ---
 ## References
@@ -218,6 +244,9 @@ https://www.usgs.gov/media/videos/landsat-collections-what-are-tiers
 Planetary-scale geospatial analysis for everyone’. Remote Sensing of Environment, 202, pp. 18–27.
 
 * Campbell, James B., and Randolph H. Wynne. (2011). Introduction to remote sensing. Guilford Press.
+
+* Jiao, L. (2015). ‘Urban land density function: A new method to characterize urban expansion’. Landscape and Urban
+Planning, 139, pp. 26–39.
 
 ---
 
